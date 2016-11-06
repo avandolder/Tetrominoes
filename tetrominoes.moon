@@ -151,7 +151,6 @@ class Board
         @set_shape(@shape)
         @shape = @next_shape
         @next_shape = @generate_shape!
-        @lines_cleared += 1
 
     if not love.keyboard.isDown('down')
       @move_wait = 1
@@ -256,6 +255,7 @@ class Board
 
       if row_full
         @clear_row row
+        @lines_cleared += 1
 
   clear_row: (row) =>
     if row == 1
