@@ -56,7 +56,7 @@ SHAPES = {
     {1, 1},
     {0, 1}}},
   {{{1, 1}, -- O shape
-    {1, 1}}}
+    {1, 1}}},
 }
 
 -- COLORS is a table of all of the colors that correspond to each shape.
@@ -75,8 +75,7 @@ CELL_EMPTY = 0
 CELL_FULL = 1
 
 class Shape
-  new:
-    (@type, @orient, @row, @col, @color, @boardw, @boardh) =>
+  new: (@type, @orient, @row, @col, @color, @boardw, @boardh) =>
 
   draw: (boardx, boardy, drow=@row, dcol=@col) =>
     prevcolor = { love.graphics.getColor! }
@@ -126,7 +125,6 @@ class Board
     -- Generate a new shape.
     @shape = @generate_shape!
     @next_shape = @generate_shape!
-    @shape_above_board = false
 
     @move_wait = 0.75
     @move_timer = 0
@@ -179,8 +177,8 @@ class Board
     -- Draw all of the full cells.
     prevcolor = { love.graphics.getColor! }
     for row = 1,@height
-      love.graphics.setColor(255, 255, 255)
-      love.graphics.print row, @x+1 - BLOCK_SIZE, @y+1 + (row-1)*BLOCK_SIZE
+      --love.graphics.setColor(255, 255, 255)
+      --love.graphics.print row, @x+1 - BLOCK_SIZE, @y+1 + (row-1)*BLOCK_SIZE
 
       for col = 1,@width
         if @data[row][col][1] == CELL_FULL
@@ -190,10 +188,10 @@ class Board
             @y+1 + (row-1)*BLOCK_SIZE,
             BLOCK_SIZE-2, BLOCK_SIZE-2
 
-        love.graphics.setColor(255, 255, 255)
-        love.graphics.print col,
-          @x+1 + (col-1)*BLOCK_SIZE,
-          @y+1 + (row-1)*BLOCK_SIZE
+        --love.graphics.setColor(255, 255, 255)
+        --love.graphics.print col,
+        --  @x+1 + (col-1)*BLOCK_SIZE,
+        --  @y+1 + (row-1)*BLOCK_SIZE
     love.graphics.setColor prevcolor
 
   generate_shape: =>
