@@ -92,20 +92,13 @@ class Shape
     love.graphics.setColor prevcolor
 
   has_block: (row, col) =>
-    if SHAPES[@type][@orient][row][col] == 1
-      true
-    else
-      false
+    SHAPES[@type][@orient][row][col] == 1
 
   get_blocks: =>
-    return SHAPES[@type][@orient]
+    SHAPES[@type][@orient]
 
   rotate: (direction = 1) =>
-    @orient += direction
-    if @orient > #SHAPES[@type]
-      @orient = 1
-    elseif @orient < 1
-      @orient = #SHAPES[@type]
+    @orient = (@orient + direction - 1) % #SHAPES[@type] + 1
 
   movehorz: (amount) =>
     @col += amount
