@@ -26,6 +26,6 @@ class Menu
   draw: (x=@x, y=@y) =>
     for i = 1,#@options
       if i == @curr_option
-        love.graphics.print '> ' .. @options[i].tag, x, y + 20*(i-1)
-      else
-        love.graphics.print @options[i].tag, x, y + 20*(i-1)
+        love.graphics.print '>', x - 12, y + 20*(i-1)
+
+      love.graphics.print @options[i].tag, x, y + 20*(i-1)
