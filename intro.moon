@@ -20,5 +20,5 @@ class Intro
   draw: =>
     love.graphics.setFont(@font)
     love.graphics.setColor 255, 255, 255, 255
-    love.graphics.print 'Tetrominoes', 10, 10
+    love.graphics.print 'Tetrominoes' .. (debug and ' (DEBUG)' or ''), 10, 10
     @menu\draw 10, 30

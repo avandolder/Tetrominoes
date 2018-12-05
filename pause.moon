@@ -25,5 +25,5 @@ class Pause
 
     love.graphics.setFont(@font)
     love.graphics.setColor(255, 255, 255, 255)
-    love.graphics.print('Paused', 300, 200)
+    love.graphics.print('Paused' .. (debug and ' (DEBUG)' or ''), 300, 200)
     @menu\draw 300, 220
