@@ -7,7 +7,7 @@ GS = require 'hump.gamestate'
 Gameover = require 'gameover'
 Pause = require 'pause'
 
--- shapes is a table of all of the possible shapes in all of their
+-- SHAPES is a table of all of the possible shapes in all of their
 -- possible rotations.
 SHAPES = {
   {{{1}, -- L shape
@@ -73,6 +73,7 @@ COLORS = {
 BLOCK_SIZE = 16
 CELL_EMPTY = 0
 CELL_FULL = 1
+
 
 class Shape
   new: (@type, @orient, @row, @col, @color, @boardw, @boardh) =>
