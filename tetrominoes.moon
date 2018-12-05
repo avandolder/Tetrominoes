@@ -194,7 +194,7 @@ class Board
     color = COLORS[shape_type]
     col = math.floor(@width/2 - #SHAPES[shape_type][1][1]/2) + 1
     row = 1 - #SHAPES[shape_type][1]
-    return Shape(shape_type, 1, row, col, color, @width, @height)
+    Shape(shape_type, 1, row, col, color, @width, @height)
 
   rotate: =>
     @shape\rotate!
@@ -228,7 +228,7 @@ class Board
           if shape.row+row > @height or
               @data[shape.row + row][shape.col + col][1] == CELL_FULL
             return true
-    return false
+    false
 
   set_shape: (shape) =>
     s = shape\get_blocks!
