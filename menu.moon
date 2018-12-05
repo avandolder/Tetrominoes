@@ -8,16 +8,10 @@ class Menu
     @key_dt += dt
     if @key_dt >= @key_wait
       if love.keyboard.isDown('down')
-        if @curr_option >= #@options
-          @curr_option = 1
-        else
-          @curr_option += 1
+        @curr_option = (@curr_option % #@options) + 1
         @key_dt = 0
       elseif love.keyboard.isDown('up')
-        if @curr_option <= 1
-          @curr_option = #@options
-        else
-          @curr_option -= 1
+        @curr_option = (@curr_option - 2) % #@options + 1
         @key_dt = 0
 
       if love.keyboard.isDown('return')
