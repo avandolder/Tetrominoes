@@ -20,10 +20,10 @@ class Pause
     @prev\draw!
 
     -- Draw a transparent rectangle over the game board.
-    love.graphics.setColor(0, 0, 0, 255/2)
+    love.graphics.setColor(0, 0, 0, 0.5)
     love.graphics.rectangle("fill", 0, 0, 640, 480)
 
     love.graphics.setFont(@font)
-    love.graphics.setColor(255, 255, 255, 255)
+    love.graphics.setColor(1, 1, 1, 1)
     love.graphics.print('Paused' .. (debug and ' (DEBUG)' or ''), 300, 200)
     @menu\draw 300, 220

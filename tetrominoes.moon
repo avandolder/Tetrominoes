@@ -61,13 +61,13 @@ SHAPES = {
 
 -- COLORS is a table of all of the colors that correspond to each shape.
 COLORS = {
-  {255, 127, 0}, -- Orange (L)
-  {0, 0, 255}, -- Blue (J)
-  {255, 0, 255}, -- Purple (T)
-  {0, 255, 255}, -- Aqua (I)
-  {255, 0, 0}, -- Red (Z)
-  {0, 255, 0}, -- Green (S)
-  {255, 255, 0}, -- Yellow (O)
+  {1, 0.5, 0}, -- Orange (L)
+  {0, 0, 1}, -- Blue (J)
+  {1, 0, 1}, -- Purple (T)
+  {0, 1, 1}, -- Aqua (I)
+  {1, 0, 0}, -- Red (Z)
+  {0, 1, 0}, -- Green (S)
+  {1, 1, 0}, -- Yellow (O)
 }
 
 BLOCK_SIZE = 16
