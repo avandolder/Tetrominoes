@@ -170,8 +170,9 @@ class Board
     -- Draw all of the full cells.
     prevcolor = { love.graphics.getColor! }
     for row = 1,@height
-      --love.graphics.setColor(255, 255, 255)
-      --love.graphics.print row, @x+1 - BLOCK_SIZE, @y+1 + (row-1)*BLOCK_SIZE
+      if debug
+        love.graphics.setColor(255, 255, 255)
+        love.graphics.print row, @x+1 - BLOCK_SIZE, @y+1 + (row-1)*BLOCK_SIZE
 
       for col = 1,@width
         if @data[row][col][1] == CELL_FULL
@@ -181,10 +182,11 @@ class Board
             @y+1 + (row-1)*BLOCK_SIZE,
             BLOCK_SIZE-2, BLOCK_SIZE-2
 
-        --love.graphics.setColor(255, 255, 255)
-        --love.graphics.print col,
-        --  @x+1 + (col-1)*BLOCK_SIZE,
-        --  @y+1 + (row-1)*BLOCK_SIZE
+        if debug
+          love.graphics.setColor(255, 255, 255)
+          love.graphics.print col,
+            @x+1 + (col-1)*BLOCK_SIZE,
+            @y+1 + (row-1)*BLOCK_SIZE
     love.graphics.setColor prevcolor
 
   generate_shape: =>
