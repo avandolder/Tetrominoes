@@ -284,4 +284,4 @@ class Tetrominoes
     @board\draw!
     love.graphics.print "Up next:", 10, 10
     @board.next_shape\draw 10, 30, 1, 1
-    love.graphics.print "Lines cleared: " .. @board.score, 128, 10
+    love.graphics.print "Score: " .. @board.score, 128, 10
