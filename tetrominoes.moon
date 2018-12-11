@@ -193,7 +193,7 @@ class Board
   generate_shape: =>
     shape_type = love.math.random(1, #SHAPES)
     color = COLORS[shape_type]
-    col = math.floor(@width/2 - #SHAPES[shape_type][1][1]/2) + 1
+    col = math.floor((@width - #SHAPES[shape_type][1][1]) / 2) + 1
     row = 1 - #SHAPES[shape_type][1]
     Shape(shape_type, 1, row, col, color, @width, @height)
 
