@@ -17,7 +17,7 @@ class Gameover
     @menu\update dt
 
   draw: =>
-    love.graphics.setFont(@font)
-    love.graphics.setColor(255, 255, 255, 255)
-    love.graphics.print('Game over!', 10, 10)
+    love.graphics.setFont @font
+    love.graphics.setColor 255, 255, 255, 255
+    love.graphics.print 'Game over!', 10, 10
     @menu\draw 10, 30

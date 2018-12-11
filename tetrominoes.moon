@@ -140,7 +140,7 @@ class Board
           return
 
         @shape\movevert -1
-        @set_shape(@shape)
+        @set_shape @shape
         @shape = @next_shape
         @next_shape = @generate_shape!
 
@@ -156,23 +156,22 @@ class Board
         @move_wait = 0.05
         @key_timer = 0
       if love.keyboard.isDown('left')
-        @move_shape(-1)
+        @move_shape -1
         @key_timer = 0
       if love.keyboard.isDown('right')
-        @move_shape(1)
+        @move_shape 1
         @key_timer = 0
 
   draw: =>
     -- Draw the box around the game board.
-    love.graphics.rectangle(
-      'line', @x, @y, @width*BLOCK_SIZE, @height*BLOCK_SIZE)
+    love.graphics.rectangle 'line', @x, @y, @width*BLOCK_SIZE, @height*BLOCK_SIZE
     -- Draw the current shape.
     @shape\draw @x, @y
     -- Draw all of the full cells.
     prevcolor = { love.graphics.getColor! }
     for row = 1,@height
       if debug
-        love.graphics.setColor(255, 255, 255)
+        love.graphics.setColor 255, 255, 255
         love.graphics.print row, @x+1 - BLOCK_SIZE, @y+1 + (row-1)*BLOCK_SIZE
 
       for col = 1,@width
@@ -195,7 +194,7 @@ class Board
     color = COLORS[shape_type]
     col = math.floor((@width - #SHAPES[shape_type][1][1]) / 2) + 1
     row = 1 - #SHAPES[shape_type][1]
-    Shape(shape_type, 1, row, col, color, @width, @height)
+    Shape shape_type, 1, row, col, color, @width, @height
 
   rotate: =>
     @shape\rotate!
@@ -210,13 +209,13 @@ class Board
       @shape\movehorz -1
 
     if not can_rotate
-      @shape\rotate(-1)
+      @shape\rotate -1
       @shape\movehorz i
 
   move_shape: (direction) =>
-    @shape\movehorz(direction)
+    @shape\movehorz direction
     if @collision(@shape)
-      @shape\movehorz(-direction)
+      @shape\movehorz -direction
 
   collision: (shape) =>
     s = shape\get_blocks!

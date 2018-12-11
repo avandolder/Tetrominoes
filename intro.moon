@@ -18,7 +18,7 @@ class Intro
     @menu\update dt
 
   draw: =>
-    love.graphics.setFont(@font)
+    love.graphics.setFont @font
     love.graphics.setColor 1, 1, 1, 1
     love.graphics.print 'Tetrominoes' .. (debug and ' (DEBUG)' or ''), 10, 10
     @menu\draw 10, 30
